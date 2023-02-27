@@ -1,0 +1,331 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+a,
+span,
+img,
+button,
+input,
+svg {
+  display: block;
+}
+input {
+  width: 100%;
+}
+img {
+  height: auto;
+}
+input,
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+}
+button {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+address {
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/epilogue/v13/O4ZMFGj5hxF0EhjimngomvnCCtqb30OXAjPiDA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/epilogue/v13/O4ZMFGj5hxF0EhjimngomvnCCtqb30OX1zTiDA.ttf) format('truetype');
+}
+html {
+  font-family: 'Epilogue', sans-serif;
+  scroll-behavior: smooth;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+}
+body {
+  background-color: hsl(0, 0%, 98%);
+}
+/*---------------------------*\
+  --- Navbar 
+\*---------------------------*/
+header {
+  padding-block: 1.25rem;
+  padding-inline: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  max-width: 80%;
+}
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 240px;
+  height: 100vh;
+  background-color: hsl(0, 0%, 98%);
+  padding: 1.25rem;
+  box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in;
+}
+nav.active {
+  transform: translateX(0%);
+  transition: transform 0.4s ease-out;
+}
+nav.active + .overlay {
+  transition: 0.4s ease-out;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.close-menu {
+  margin-inline-start: auto;
+}
+.navbar-list {
+  margin-block-start: 1.25rem;
+}
+.navbar-item {
+  color: hsl(0, 0%, 41%);
+}
+.navbar-item > div {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  transition: 0.2s ease;
+}
+.navbar-item > div .arrow {
+  transition: 0.2s ease;
+}
+.navbar-item > div:hover {
+  color: hsl(0, 0%, 8%);
+}
+.navbar-item > div.active .arrow {
+  transform: rotate(-180deg);
+}
+.navbar-item .navbar-link:not(:has(+.arrow)):hover {
+  color: hsl(0, 0%, 8%);
+}
+.navbar-item .navbar-link {
+  padding-block: 0.75rem;
+}
+.dropdown-list {
+  transition: 0.4s ease max-height;
+  max-height: 0;
+  overflow: hidden;
+}
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding-block: 0.625rem;
+  padding-inline-start: 1.25rem;
+}
+.dropdown-item:hover {
+  color: hsl(0, 0%, 8%);
+}
+.dropdown-item:first-child {
+  margin-top: 0.625rem;
+}
+.dropdown-item:last-child {
+  margin-bottom: 0.625rem;
+}
+.auth-btns {
+  margin-block-start: 1.875rem;
+}
+.auth-btns .btn {
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  width: 100%;
+  color: hsl(0, 0%, 41%);
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+.auth-btns .btn:hover {
+  color: hsl(0, 0%, 8%);
+  border-color: hsl(0, 0%, 8%);
+}
+.auth-btns .register {
+  border: 1.5px solid hsl(0, 0%, 41%);
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  transition: 0.4s ease-in;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+/*---------------------------*\
+  --- HERO 
+\*---------------------------*/
+picture img {
+  max-width: 100%;
+}
+section {
+  text-align: center;
+  padding-inline: 1rem;
+}
+h1 {
+  margin-top: 2.125rem;
+  color: hsl(0, 0%, 8%);
+  font-size: 2.125rem;
+  font-weight: 700;
+}
+h1 span {
+  display: inline-block;
+}
+.hero-text {
+  color: hsl(0, 0%, 41%);
+  line-height: 1.4;
+  font-size: 0.9375rem;
+  margin-block: 1rem 1.25rem;
+}
+.learn-more-btn {
+  margin-inline: auto;
+  color: hsl(0, 0%, 98%);
+  background-color: hsl(0, 0%, 8%);
+  border: 1px solid hsl(0, 0%, 8%);
+  border-radius: 12px;
+  padding: 0.875rem 1.375rem;
+  transition: 0.2s ease;
+  margin-block-end: 2.1875rem;
+}
+.learn-more-btn:hover {
+  color: hsl(0, 0%, 8%);
+  background-color: hsl(0, 0%, 98%);
+  border-color: hsl(0, 0%, 8%);
+}
+.client-list {
+  display: flex;
+  align-items: center;
+  gap: 0.9375rem;
+}
+.client-list img {
+  max-width: 100%;
+}
+@media only screen and (min-width: 1024px) {
+  header {
+    padding-block: 0;
+    padding-inline: 1.875rem;
+  }
+  .open-menu,
+  .close-menu {
+    display: none;
+  }
+  .logo {
+    max-width: 100%;
+  }
+  nav {
+    all: unset;
+    margin-inline-start: 3.125rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar-list {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5625rem;
+  }
+  .navbar-item {
+    position: relative;
+    padding-block: 1.25rem;
+  }
+  .dropdown-item {
+    padding-inline: 1.25rem;
+  }
+  .dropdown-list {
+    position: absolute;
+    top: 85%;
+    min-width: max-content;
+    background-color: hsl(0, 0%, 98%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .dropdown-list.left {
+    left: 0;
+  }
+  .dropdown-list.right {
+    right: 0;
+  }
+  .auth-btns {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5625rem;
+  }
+  main {
+    display: grid;
+    grid-template-columns: 1fr 0.75fr;
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+  picture {
+    order: 1;
+  }
+  section {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+  }
+  .content {
+    text-align: left;
+    max-width: max-content;
+    margin-top: auto;
+  }
+  h1 {
+    font-size: 5rem;
+    margin-top: 4.6875rem;
+  }
+  h1 span {
+    display: block;
+  }
+  .hero-text {
+    font-size: 1.125rem;
+    max-width: 450px;
+    margin-block: 2.5rem 3.125rem;
+  }
+  .learn-more-btn {
+    font-size: 1.125rem;
+    margin-inline: 0;
+  }
+  .client-container {
+    margin-top: auto;
+    width: 500px;
+  }
+  .client-list {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
